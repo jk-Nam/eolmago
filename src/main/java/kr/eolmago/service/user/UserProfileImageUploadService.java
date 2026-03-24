@@ -139,7 +139,11 @@ public class UserProfileImageUploadService {
     }
 
     private String generateUniqueFileName(String originalFileName, UUID userId) {
-        String extension = originalFileName.substring(originalFileName.lastIndexOf("."));
+        // 보안: 파일명이 null이거나 확장자가 없는 경우 처리 (예외 방지)
+        String extension = "";
+        if (originalFileName != null && originalFileName.contains(".")) {
+            extension = originalFileName.substring(originalFileName.lastIndexOf("."));
+        }
         return "user_profile/" + userId.toString() + "/profile" + extension;
     }
 }
