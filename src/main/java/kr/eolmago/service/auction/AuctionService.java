@@ -1,5 +1,7 @@
 package kr.eolmago.service.auction;
 
+// CODE REVIEW: jk-Nam 작업
+
 import kr.eolmago.domain.entity.auction.Auction;
 import kr.eolmago.domain.entity.auction.AuctionImage;
 import kr.eolmago.domain.entity.auction.AuctionItem;

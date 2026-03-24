@@ -1,5 +1,7 @@
 package kr.eolmago.service.user;
 
+// CODE REVIEW: jk-Nam 작업
+
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;

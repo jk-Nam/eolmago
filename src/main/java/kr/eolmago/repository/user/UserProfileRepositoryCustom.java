@@ -1,5 +1,7 @@
 package kr.eolmago.repository.user;
 
+// CODE REVIEW: jk-Nam 작업
+
 import kr.eolmago.domain.entity.user.UserProfile;
 
 import java.util.Optional;

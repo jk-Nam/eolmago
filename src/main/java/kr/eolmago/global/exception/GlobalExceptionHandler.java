@@ -1,5 +1,7 @@
 package kr.eolmago.global.exception;
 
+// CODE REVIEW: jk-Nam 작업
+
 
 import jakarta.servlet.http.HttpServletRequest;
 import kr.eolmago.service.notification.exception.NotificationErrorCode;

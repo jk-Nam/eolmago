@@ -1,5 +1,7 @@
 package kr.eolmago.global.config;
 
+// CODE REVIEW: jk-Nam 작업
+
 import kr.eolmago.global.exception.CustomAccessDeniedHandler;
 import kr.eolmago.global.exception.CustomAuthenticationEntryPoint;
 import kr.eolmago.global.security.filter.JwtAuthenticationFilter;

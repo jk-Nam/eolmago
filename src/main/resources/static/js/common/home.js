@@ -1,3 +1,4 @@
+// CODE REVIEW: jk-Nam 작업
 (async function() {
     // API 호출 함수
     async function fetchAuctions(sort, size = 4) {

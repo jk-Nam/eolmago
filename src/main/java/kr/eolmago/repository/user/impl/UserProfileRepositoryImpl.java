@@ -1,5 +1,7 @@
 package kr.eolmago.repository.user.impl;
 
+// CODE REVIEW: jk-Nam 작업
+
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;
 import kr.eolmago.domain.entity.user.UserProfile;

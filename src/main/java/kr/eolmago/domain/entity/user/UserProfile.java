@@ -1,5 +1,7 @@
 package kr.eolmago.domain.entity.user;
 
+// CODE REVIEW: jk-Nam 작업
+
 import kr.eolmago.domain.entity.common.AuditableEntity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;

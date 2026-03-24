@@ -1,5 +1,7 @@
 package kr.eolmago.global.security.handler;
 
+// CODE REVIEW: jk-Nam 작업
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

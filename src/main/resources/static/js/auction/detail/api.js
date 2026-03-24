@@ -1,3 +1,4 @@
+// CODE REVIEW: jk-Nam 작업
 export class Api {
     async getAuctionDetail(auctionId) {
         const url = `/api/auctions/${encodeURIComponent(auctionId)}`;

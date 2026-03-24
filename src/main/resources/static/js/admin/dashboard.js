@@ -1,4 +1,5 @@
 // /static/js/admin/dashboard.js
+// CODE REVIEW: jk-Nam 작업 - 관리자 대시보드 JavaScript
 document.addEventListener('DOMContentLoaded', () => {
     // --- 상태 변수 ---
     let currentUserPage = 0;

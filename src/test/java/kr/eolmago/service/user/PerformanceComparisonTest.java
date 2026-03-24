@@ -1,5 +1,7 @@
 package kr.eolmago.service.user;
 
+// CODE REVIEW: jk-Nam 작업
+
 import kr.eolmago.domain.entity.user.User;
 import kr.eolmago.domain.entity.user.enums.UserRole;
 import kr.eolmago.repository.user.UserRepository;

@@ -1,3 +1,4 @@
+// CODE REVIEW: jk-Nam 작업
 import {
     formatNumber,
     safeText,

@@ -1,3 +1,4 @@
+// CODE REVIEW: jk-Nam 작업
 /**
  * 경로: src/main/resources/static/js/auction/detail/modal/report-modal.js
  * 역할: 신고 모달 제어 및 API 호출

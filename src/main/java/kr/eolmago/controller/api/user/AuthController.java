@@ -1,5 +1,7 @@
 package kr.eolmago.controller.api.user;
 
+// CODE REVIEW: jk-Nam 작업
+
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;

@@ -1,5 +1,7 @@
 package kr.eolmago.service.user;
 
+// CODE REVIEW: jk-Nam 작업
+
 import kr.eolmago.global.config.SupabaseConfig;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -1,5 +1,7 @@
 package kr.eolmago.controller.view.auction;
 
+// CODE REVIEW: jk-Nam 작업
+
 import kr.eolmago.domain.entity.auction.enums.AuctionStatus;
 import kr.eolmago.dto.api.auction.request.AuctionSearchRequest;
 import kr.eolmago.dto.api.auction.response.AuctionDetailResponse;

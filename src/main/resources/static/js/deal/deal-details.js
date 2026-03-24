@@ -1,3 +1,4 @@
+// CODE REVIEW: jk-Nam 작업
 /**
  * 통합 거래 상세 페이지 JavaScript
  * - BUYER/SELLER 역할에 따라 동적으로 동작

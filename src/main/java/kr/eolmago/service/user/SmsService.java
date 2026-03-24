@@ -1,5 +1,7 @@
 package kr.eolmago.service.user;
 
+// CODE REVIEW: jk-Nam 작업
+
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import net.nurigo.sdk.NurigoApp;
