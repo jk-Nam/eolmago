@@ -1,7 +1,4 @@
 package kr.eolmago.global.exception;
-
-// CODE REVIEW: jk-Nam 작업
-
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

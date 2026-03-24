@@ -1,4 +1,3 @@
-// CODE REVIEW: jk-Nam 작업
 let timerInterval; // 타이머 인터벌 변수
 let selectedImageFile = null; // 선택된 이미지 파일
 

@@ -1,7 +1,4 @@
 package kr.eolmago.repository.report.impl;
-
-// CODE REVIEW: jk-Nam 작업
-
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import kr.eolmago.domain.entity.report.Report;

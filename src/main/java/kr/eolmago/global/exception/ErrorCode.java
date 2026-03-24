@@ -1,7 +1,4 @@
 package kr.eolmago.global.exception;
-
-// CODE REVIEW: jk-Nam 작업
-
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

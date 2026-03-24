@@ -1,7 +1,4 @@
 package kr.eolmago.domain.entity.report.enums;
-
-// CODE REVIEW: jk-Nam 작업
-
 public enum ReportStatus {
     PENDING, // 접수
     UNDER_REVIEW, // 검토 중

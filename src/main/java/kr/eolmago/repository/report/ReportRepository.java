@@ -1,7 +1,4 @@
 package kr.eolmago.repository.report;
-
-// CODE REVIEW: jk-Nam 작업
-
 import kr.eolmago.domain.entity.auction.Auction;
 import kr.eolmago.domain.entity.report.Report;
 import kr.eolmago.domain.entity.report.enums.ReportStatus;

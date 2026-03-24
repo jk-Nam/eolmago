@@ -1,4 +1,3 @@
-// CODE REVIEW: jk-Nam 작업
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const errorMessage = urlParams.get('errorMessage');

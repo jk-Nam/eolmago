@@ -1,7 +1,4 @@
 package kr.eolmago.controller.view.user;
-
-// CODE REVIEW: jk-Nam 작업
-
 import kr.eolmago.dto.api.user.response.UserProfileResponse;
 import kr.eolmago.global.security.CustomUserDetails;
 import kr.eolmago.service.user.UserProfileService;

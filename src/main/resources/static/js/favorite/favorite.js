@@ -1,4 +1,3 @@
-// CODE REVIEW: jk-Nam 작업
 // /static/js/favorite.js
 document.addEventListener("DOMContentLoaded", () => {
     const FAVORITE_BTN_SELECTOR = ".js-fav-toggle";

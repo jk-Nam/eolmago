@@ -1,7 +1,4 @@
 package kr.eolmago.dto.api.user.request;
-
-// CODE REVIEW: jk-Nam 작업
-
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 

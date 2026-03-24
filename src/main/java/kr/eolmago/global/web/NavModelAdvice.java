@@ -1,7 +1,4 @@
 package kr.eolmago.global.web;
-
-// CODE REVIEW: jk-Nam 작업
-
 import kr.eolmago.global.security.CustomUserDetails;
 import kr.eolmago.service.notification.NotificationService;
 import lombok.RequiredArgsConstructor;

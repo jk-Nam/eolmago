@@ -1,7 +1,4 @@
 package kr.eolmago.global.config;
-
-// CODE REVIEW: jk-Nam 작업
-
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;

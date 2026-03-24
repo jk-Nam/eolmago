@@ -1,7 +1,4 @@
 package kr.eolmago.controller.api.auction;
-
-// CODE REVIEW: jk-Nam 작업
-
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;

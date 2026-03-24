@@ -1,7 +1,4 @@
 package kr.eolmago.dto.api.user.response;
-
-// CODE REVIEW: jk-Nam 작업
-
 import kr.eolmago.domain.entity.user.UserProfile;
 import kr.eolmago.domain.entity.user.enums.UserRole;
 

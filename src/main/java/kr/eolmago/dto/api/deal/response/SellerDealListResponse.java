@@ -1,7 +1,4 @@
 package kr.eolmago.dto.api.deal.response;
-
-// CODE REVIEW: jk-Nam 작업
-
 import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.util.List;

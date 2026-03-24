@@ -1,7 +1,4 @@
 package kr.eolmago.controller.api.admin;
-
-// CODE REVIEW: jk-Nam 작업 - 관리자 API 컨트롤러
-
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kr.eolmago.domain.entity.report.enums.ReportAction;

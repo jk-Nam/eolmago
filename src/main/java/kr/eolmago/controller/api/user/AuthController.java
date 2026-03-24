@@ -1,7 +1,4 @@
 package kr.eolmago.controller.api.user;
-
-// CODE REVIEW: jk-Nam 작업
-
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
@@ -94,10 +91,12 @@ public class AuthController {
     }
 
     @GetMapping("/inactive")
-    public void inactive(
-            @RequestParam UUID userId
+    public ResponseEntity<?> inactive(
+            @AuthenticationPrincipal CustomUserDetails user
     ) {
-        authService.logout(userId);
+        // 본인의 세션만 무효화 가능 (보안 취약점 수정)
+        authService.logout(user.getUserId());
+        return ResponseEntity.ok(Map.of("message", "세션이 무효화되었습니다."));
     }
 
     private void addCookie(

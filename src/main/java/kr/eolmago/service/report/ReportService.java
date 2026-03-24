@@ -1,7 +1,4 @@
 package kr.eolmago.service.report;
-
-// CODE REVIEW: jk-Nam 작업 - 신고 시스템 서비스
-
 import kr.eolmago.domain.entity.auction.Auction;
 import kr.eolmago.domain.entity.report.Report;
 import kr.eolmago.domain.entity.report.enums.ReportAction;

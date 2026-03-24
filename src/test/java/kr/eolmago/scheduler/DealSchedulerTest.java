@@ -1,7 +1,4 @@
 package kr.eolmago.scheduler;
-
-// CODE REVIEW: jk-Nam 작업
-
 import kr.eolmago.domain.entity.deal.Deal;
 import kr.eolmago.domain.entity.deal.enums.DealStatus;
 import kr.eolmago.repository.deal.DealRepository;

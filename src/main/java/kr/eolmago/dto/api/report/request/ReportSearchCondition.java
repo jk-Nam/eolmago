@@ -1,7 +1,4 @@
 package kr.eolmago.dto.api.report.request;
-
-// CODE REVIEW: jk-Nam 작업
-
 import kr.eolmago.domain.entity.report.enums.ReportReason;
 import kr.eolmago.domain.entity.report.enums.ReportStatus;
 import kr.eolmago.domain.entity.report.enums.ReportTargetType;

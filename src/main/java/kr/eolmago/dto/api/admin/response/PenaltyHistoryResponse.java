@@ -1,7 +1,4 @@
 package kr.eolmago.dto.api.admin.response;
-
-// CODE REVIEW: jk-Nam 작업
-
 import kr.eolmago.domain.entity.user.enums.PenaltyType;
 import lombok.Builder;
 

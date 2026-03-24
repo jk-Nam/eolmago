@@ -1,7 +1,4 @@
 package kr.eolmago.scheduler;
-
-// CODE REVIEW: jk-Nam 작업
-
 import jakarta.persistence.EntityManager;
 import kr.eolmago.domain.entity.auction.Auction;
 import kr.eolmago.domain.entity.auction.AuctionItem;

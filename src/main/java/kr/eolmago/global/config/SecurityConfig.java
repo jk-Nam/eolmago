@@ -1,7 +1,4 @@
 package kr.eolmago.global.config;
-
-// CODE REVIEW: jk-Nam 작업
-
 import kr.eolmago.global.exception.CustomAccessDeniedHandler;
 import kr.eolmago.global.exception.CustomAuthenticationEntryPoint;
 import kr.eolmago.global.security.filter.JwtAuthenticationFilter;
@@ -62,7 +59,8 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        // 인증/토큰 발급
+                        // 인증/토큰 발급 (inactive는 인증 필요)
+                        .requestMatchers("/api/auth/inactive").authenticated()
                         .requestMatchers("/api/auth/**").permitAll()
 
                         // 경매 조회만 로그인 전 공개

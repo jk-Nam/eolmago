@@ -1,7 +1,4 @@
 package kr.eolmago.service.user;
-
-// CODE REVIEW: jk-Nam 작업
-
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.StringRedisTemplate;

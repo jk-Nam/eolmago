@@ -1,7 +1,4 @@
 package kr.eolmago.domain.entity.deal;
-
-// CODE REVIEW: jk-Nam 작업
-
 import kr.eolmago.domain.entity.common.AuditableEntity;
 import kr.eolmago.domain.entity.auction.Auction;
 import kr.eolmago.domain.entity.deal.enums.DealStatus;

@@ -1,4 +1,3 @@
-// CODE REVIEW: jk-Nam 작업
 document.addEventListener("DOMContentLoaded", () => {
     console.info("[seller-deals] init");
 

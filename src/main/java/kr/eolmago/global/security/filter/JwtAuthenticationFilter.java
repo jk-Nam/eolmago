@@ -1,7 +1,4 @@
 package kr.eolmago.global.security.filter;
-
-// CODE REVIEW: jk-Nam 작업 - JWT 인증 필터
-
 import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

@@ -1,7 +1,4 @@
 package kr.eolmago.global.security.handler;
-
-// CODE REVIEW: jk-Nam 작업 - OAuth2 인증 성공 핸들러
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;

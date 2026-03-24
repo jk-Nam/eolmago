@@ -1,7 +1,4 @@
 package kr.eolmago.domain.entity.user;
-
-// CODE REVIEW: jk-Nam 작업
-
 import jakarta.persistence.*;
 import kr.eolmago.domain.entity.common.AuditableEntity;
 import kr.eolmago.domain.entity.user.enums.UserRole;

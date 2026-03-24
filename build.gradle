@@ -1,4 +1,3 @@
-# CODE REVIEW: jk-Nam 작업
 plugins {
     id 'java'
     id 'org.springframework.boot' version '3.5.9'
