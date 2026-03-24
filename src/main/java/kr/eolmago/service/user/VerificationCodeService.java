@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
-import java.util.Random;
+import java.security.SecureRandom;
 import java.util.concurrent.TimeUnit;
 
 @Service
@@ -14,6 +14,8 @@ public class VerificationCodeService {
 
     private static final String PREFIX = "sms:verification:";
     private static final int EXPIRATION_MINUTES = 5;
+    // 보안: 암호학적으로 안전한 난수 생성기 사용 (OTP 예측 불가)
+    private static final SecureRandom SECURE_RANDOM = new SecureRandom();
 
     private final StringRedisTemplate redisTemplate;
     private final SmsService smsService;
@@ -46,8 +48,8 @@ public class VerificationCodeService {
     }
 
     private String generateRandomCode() {
-        Random random = new Random();
-        int number = 100000 + random.nextInt(900000); // 6자리 숫자
+        // 암호학적으로 안전한 난수로 6자리 인증코드 생성
+        int number = 100000 + SECURE_RANDOM.nextInt(900000);
         return String.valueOf(number);
     }
 }
