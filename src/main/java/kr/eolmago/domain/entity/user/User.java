@@ -1,9 +1,9 @@
 package kr.eolmago.domain.entity.user;
 
+import jakarta.persistence.*;
 import kr.eolmago.domain.entity.common.AuditableEntity;
 import kr.eolmago.domain.entity.user.enums.UserRole;
 import kr.eolmago.domain.entity.user.enums.UserStatus;
-import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,6 +29,9 @@ public class User extends AuditableEntity {
     @Column(nullable = false, length = 20)
     private UserStatus status;
 
+    @OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
+    private UserProfile userProfile;
+
     public static User create(
             UserRole role
     ) {
@@ -36,5 +39,13 @@ public class User extends AuditableEntity {
         user.role = role;
         user.status = UserStatus.ACTIVE;
         return user;
+    }
+
+    public void updateRole(UserRole newRole) {
+        this.role = newRole;
+    }
+
+    public void updateStatus(UserStatus newStatus) {
+        this.status = newStatus;
     }
 }

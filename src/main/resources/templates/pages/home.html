@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/base}">
+<head>
+    <title layout:fragment="title">홈</title>
+</head>
+
+<body>
+<div layout:fragment="content" class="bg-gray-50">
+    <div class="mx-auto max-w-7xl px-6 py-10 space-y-12">
+
+        <!-- 배너 섹션 -->
+        <section class="relative overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+            <!-- 배너 이미지(포토샵 결과물 그대로) -->
+            <img
+                    th:src="@{/images/profile/banner1.png}"
+                    alt="중고 물품 플랫폼 배너"
+                    class="absolute inset-0 h-full w-full object-cover object-right"
+            />
+
+            <!-- 텍스트 영역 -->
+            <div class="relative z-10 p-8 sm:p-10 min-h-[240px] sm:min-h-[280px] flex items-center">
+                <div class="max-w-2xl">
+            <span class="inline-flex items-center rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-slate-800 ring-1 ring-inset ring-slate-300">
+                안전하고 투명한 중고 거래
+            </span>
+
+                    <h1 class="mt-5 text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900 leading-tight">
+                        믿을 수 있는<br>
+                        <span class="text-slate-900">중고 경매 플랫폼</span>
+                    </h1>
+
+                    <p class="mt-3 text-sm sm:text-base font-medium text-slate-700 leading-relaxed">
+                        검증된 거래, 합리적인 낙찰
+                    </p>
+
+                    <div class="mt-7 flex flex-wrap gap-3">
+                        <a th:href="@{/auctions}"
+                           class="inline-flex items-center justify-center rounded-lg bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-slate-800 transition">
+                            경매 둘러보기
+                        </a>
+
+                        <a id="create-auction-btn"
+                           th:href="@{/seller/auctions/create}"
+                           th:data-user-role="${userRole != null ? userRole : 'ANONYMOUS'}"
+                           th:data-user-status="${userStatus != null ? userStatus : ''}"
+                           class="inline-flex items-center justify-center rounded-lg border border-gray-400 bg-white/90 px-5 py-2.5 text-sm font-semibold text-gray-900 hover:bg-white transition">
+                            물품 등록
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== BEST ITEM / 인기 경매 ===== -->
+        <section class="space-y-6">
+            <div class="flex items-end justify-between gap-4">
+                <div>
+                    <span class="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-800">
+                        BEST ITEM
+                    </span>
+                    <h2 class="mt-2 text-2xl font-extrabold tracking-tight text-gray-900">지금 가장 인기 있는 경매</h2>
+                    <p class="mt-2 text-sm text-gray-600">많은 이용자들이 관심을 보이는 경매를 만나보세요.</p>
+                </div>
+                <a th:href="@{/auctions(sort='popular')}"
+                   class="text-sm font-semibold text-gray-700 hover:text-gray-900">
+                    전체보기
+                </a>
+            </div>
+
+            <div id="popular-auctions" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <!-- 동적으로 로드됨 -->
+            </div>
+        </section>
+
+        <!-- ===== CLOSING SOON / 마감 임박 ===== -->
+        <section class="space-y-6">
+            <div class="flex items-end justify-between gap-4">
+                <div>
+                    <span class="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-800">
+                        CLOSING SOON
+                    </span>
+                    <h2 class="mt-2 text-2xl font-extrabold tracking-tight text-gray-900">곧 마감되는 경매</h2>
+                    <p class="mt-2 text-sm text-gray-600">마감 임박 상품을 빠르게 확인하세요.</p>
+                </div>
+                <a th:href="@{/auctions(sort=deadline)}"
+                   class="text-sm font-semibold text-gray-700 hover:text-gray-900">
+                전체보기
+                </a>
+            </div>
+
+            <div id="closing-auctions" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <!-- 동적으로 로드됨 -->
+            </div>
+        </section>
+
+    </div>
+
+    <script src="/js/common/home.js"></script>
+</div>
+</body>
+</html>
