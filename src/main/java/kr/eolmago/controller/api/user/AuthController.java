@@ -9,6 +9,7 @@ import kr.eolmago.global.security.filter.JwtAuthenticationFilter;
 import kr.eolmago.service.user.AuthService;
 import kr.eolmago.service.user.JwtService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
@@ -27,6 +28,10 @@ public class AuthController {
 
     private final AuthService authService;
     private final JwtService jwtService;
+
+    // 환경별 쿠키 보안 설정 (개발: false, 프로덕션: true)
+    @Value("${cookie.secure:false}")
+    private boolean secureCookie;
 
     public static final String REFRESH_TOKEN_COOKIE = "refreshToken";
 
@@ -107,7 +112,7 @@ public class AuthController {
     ) {
         ResponseCookie cookie = ResponseCookie.from(name, value)
                 .httpOnly(true)
-                .secure(false)
+                .secure(secureCookie)  // 환경별 설정 (개발: false, 프로덕션: true)
                 .path("/")
                 .maxAge(maxAge)
                 .sameSite("Lax")
@@ -121,7 +126,7 @@ public class AuthController {
     ) {
         ResponseCookie cookie = ResponseCookie.from(name, "")
                 .httpOnly(true)
-                .secure(false)
+                .secure(secureCookie)  // 환경별 설정 (개발: false, 프로덕션: true)
                 .path("/")
                 .maxAge(0)
                 .sameSite("Lax")

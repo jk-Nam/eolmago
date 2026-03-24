@@ -98,3 +98,7 @@ logging:
     kr.eolmago: INFO
     org.springframework.web: WARN
     org.hibernate.SQL: WARN
+
+# 쿠키 보안 설정 (프로덕션: HTTPS 필수)
+cookie:
+  secure: true
