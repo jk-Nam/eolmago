@@ -59,8 +59,8 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        // 인증/토큰 발급 (inactive는 인증 필요)
-                        .requestMatchers("/api/auth/inactive").authenticated()
+                        // 인증/토큰 발급 (inactive, logout은 인증 필요)
+                        .requestMatchers("/api/auth/inactive", "/api/auth/logout").authenticated()
                         .requestMatchers("/api/auth/**").permitAll()
 
                         // 경매 조회만 로그인 전 공개
