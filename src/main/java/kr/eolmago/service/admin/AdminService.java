@@ -1,5 +1,7 @@
 package kr.eolmago.service.admin;
 
+// CODE REVIEW: jk-Nam 작업 - 관리자 서비스
+
 import kr.eolmago.domain.entity.report.Report;
 import kr.eolmago.domain.entity.report.enums.ReportAction;
 import kr.eolmago.domain.entity.report.enums.ReportReason;

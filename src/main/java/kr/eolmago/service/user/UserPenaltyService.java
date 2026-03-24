@@ -1,5 +1,7 @@
 package kr.eolmago.service.user;
 
+// CODE REVIEW: jk-Nam 작업 - 유저 제재 시스템 서비스
+
 import kr.eolmago.domain.entity.report.Report;
 import kr.eolmago.domain.entity.report.enums.ReportAction;
 import kr.eolmago.domain.entity.user.User;
