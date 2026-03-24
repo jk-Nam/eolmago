@@ -1,5 +1,4 @@
 package kr.eolmago.service.auction;
-
 import kr.eolmago.domain.entity.auction.Auction;
 import kr.eolmago.domain.entity.auction.AuctionImage;
 import kr.eolmago.domain.entity.auction.AuctionItem;

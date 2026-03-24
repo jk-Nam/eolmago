@@ -1,5 +1,4 @@
 package kr.eolmago.global.security;
-
 import kr.eolmago.domain.entity.user.SocialLogin;
 import kr.eolmago.domain.entity.user.User;
 import kr.eolmago.domain.entity.user.UserProfile;

@@ -1,5 +1,4 @@
 package kr.eolmago.controller.api.user;
-
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
@@ -10,6 +9,7 @@ import kr.eolmago.global.security.filter.JwtAuthenticationFilter;
 import kr.eolmago.service.user.AuthService;
 import kr.eolmago.service.user.JwtService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
@@ -28,6 +28,10 @@ public class AuthController {
 
     private final AuthService authService;
     private final JwtService jwtService;
+
+    // 환경별 쿠키 보안 설정 (개발: false, 프로덕션: true)
+    @Value("${cookie.secure:false}")
+    private boolean secureCookie;
 
     public static final String REFRESH_TOKEN_COOKIE = "refreshToken";
 
@@ -83,6 +87,10 @@ public class AuthController {
             HttpServletResponse response,
             @AuthenticationPrincipal CustomUserDetails userDetails
     ) {
+        if (userDetails == null) {
+            return ResponseEntity.status(401).body(Map.of("message", "인증이 필요합니다."));
+        }
+
         authService.logout(UUID.fromString(userDetails.getId()));
 
         removeCookie(response, JwtAuthenticationFilter.ACCESS_TOKEN_COOKIE);
@@ -92,10 +100,18 @@ public class AuthController {
     }
 
     @GetMapping("/inactive")
-    public void inactive(
-            @RequestParam UUID userId
+    public ResponseEntity<?> inactive(
+            HttpServletResponse response,
+            @AuthenticationPrincipal CustomUserDetails user
     ) {
-        authService.logout(userId);
+        // 본인의 세션만 무효화 가능 (보안 취약점 수정)
+        authService.logout(user.getUserId());
+
+        // 클라이언트 쿠키도 삭제
+        removeCookie(response, JwtAuthenticationFilter.ACCESS_TOKEN_COOKIE);
+        removeCookie(response, REFRESH_TOKEN_COOKIE);
+
+        return ResponseEntity.ok(Map.of("message", "세션이 무효화되었습니다."));
     }
 
     private void addCookie(
@@ -106,7 +122,7 @@ public class AuthController {
     ) {
         ResponseCookie cookie = ResponseCookie.from(name, value)
                 .httpOnly(true)
-                .secure(false)
+                .secure(secureCookie)  // 환경별 설정 (개발: false, 프로덕션: true)
                 .path("/")
                 .maxAge(maxAge)
                 .sameSite("Lax")
@@ -120,7 +136,7 @@ public class AuthController {
     ) {
         ResponseCookie cookie = ResponseCookie.from(name, "")
                 .httpOnly(true)
-                .secure(false)
+                .secure(secureCookie)  // 환경별 설정 (개발: false, 프로덕션: true)
                 .path("/")
                 .maxAge(0)
                 .sameSite("Lax")

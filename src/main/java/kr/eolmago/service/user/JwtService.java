@@ -1,5 +1,4 @@
 package kr.eolmago.service.user;
-
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;

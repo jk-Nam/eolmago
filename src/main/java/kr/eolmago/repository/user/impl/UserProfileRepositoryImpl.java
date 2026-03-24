@@ -1,5 +1,4 @@
 package kr.eolmago.repository.user.impl;
-
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;
 import kr.eolmago.domain.entity.user.UserProfile;

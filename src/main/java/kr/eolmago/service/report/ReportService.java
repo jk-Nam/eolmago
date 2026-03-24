@@ -1,5 +1,4 @@
 package kr.eolmago.service.report;
-
 import kr.eolmago.domain.entity.auction.Auction;
 import kr.eolmago.domain.entity.report.Report;
 import kr.eolmago.domain.entity.report.enums.ReportAction;

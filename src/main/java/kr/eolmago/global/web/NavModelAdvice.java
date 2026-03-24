@@ -1,5 +1,4 @@
 package kr.eolmago.global.web;
-
 import kr.eolmago.global.security.CustomUserDetails;
 import kr.eolmago.service.notification.NotificationService;
 import lombok.RequiredArgsConstructor;

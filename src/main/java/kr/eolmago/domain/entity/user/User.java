@@ -1,5 +1,4 @@
 package kr.eolmago.domain.entity.user;
-
 import jakarta.persistence.*;
 import kr.eolmago.domain.entity.common.AuditableEntity;
 import kr.eolmago.domain.entity.user.enums.UserRole;

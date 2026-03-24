@@ -1,5 +1,4 @@
 package kr.eolmago.repository.user;
-
 import kr.eolmago.domain.entity.user.User;
 import kr.eolmago.domain.entity.user.UserProfile;
 import org.springframework.data.jpa.repository.JpaRepository;

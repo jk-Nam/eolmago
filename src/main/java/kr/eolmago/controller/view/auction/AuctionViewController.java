@@ -1,5 +1,4 @@
 package kr.eolmago.controller.view.auction;
-
 import kr.eolmago.domain.entity.auction.enums.AuctionStatus;
 import kr.eolmago.dto.api.auction.request.AuctionSearchRequest;
 import kr.eolmago.dto.api.auction.response.AuctionDetailResponse;

@@ -1,5 +1,4 @@
 package kr.eolmago.global.security.filter;
-
 import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -13,6 +12,9 @@ import kr.eolmago.service.user.RefreshTokenService;
 import kr.eolmago.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseCookie;
 import org.springframework.security.authentication.InsufficientAuthenticationException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -38,6 +40,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final JwtService jwtService;
     private final UserService userService;
     private final RefreshTokenService refreshTokenService;
+
+    @Value("${cookie.secure:false}")
+    private boolean secureCookie;
 
     private enum TokenStatus {
         VALID, EXPIRED, INVALID
@@ -251,33 +256,44 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     }
 
     private void setAccessTokenCookie(HttpServletResponse response, String token) {
-        Cookie cookie = new Cookie(ACCESS_TOKEN_COOKIE, token);
-        cookie.setPath("/");
-        cookie.setHttpOnly(true);
-        cookie.setMaxAge((int) jwtService.getAccessTokenExpirySeconds());
-        response.addCookie(cookie);
+        ResponseCookie cookie = ResponseCookie.from(ACCESS_TOKEN_COOKIE, token)
+                .httpOnly(true)
+                .secure(secureCookie)
+                .path("/")
+                .maxAge(jwtService.getAccessTokenExpirySeconds())
+                .sameSite("Lax")
+                .build();
+        response.addHeader(HttpHeaders.SET_COOKIE, cookie.toString());
     }
 
     private void setRefreshTokenCookie(HttpServletResponse response, String token) {
-        Cookie cookie = new Cookie(REFRESH_TOKEN_COOKIE, token);
-        cookie.setPath("/");
-        cookie.setHttpOnly(true);
-        cookie.setMaxAge((int) jwtService.getRefreshTokenExpirySeconds());
-        response.addCookie(cookie);
+        ResponseCookie cookie = ResponseCookie.from(REFRESH_TOKEN_COOKIE, token)
+                .httpOnly(true)
+                .secure(secureCookie)
+                .path("/")
+                .maxAge(jwtService.getRefreshTokenExpirySeconds())
+                .sameSite("Lax")
+                .build();
+        response.addHeader(HttpHeaders.SET_COOKIE, cookie.toString());
     }
 
     private void clearAuthCookies(HttpServletResponse response,  HttpServletRequest request, String reason) {
+        ResponseCookie accessCookie = ResponseCookie.from(ACCESS_TOKEN_COOKIE, "")
+                .httpOnly(true)
+                .secure(secureCookie)
+                .path("/")
+                .maxAge(0)
+                .sameSite("Lax")
+                .build();
+        response.addHeader(HttpHeaders.SET_COOKIE, accessCookie.toString());
 
-        String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS"));
-
-        Cookie accessCookie = new Cookie(ACCESS_TOKEN_COOKIE, null);
-        accessCookie.setPath("/");
-        accessCookie.setMaxAge(0);
-        response.addCookie(accessCookie);
-
-        Cookie refreshCookie = new Cookie(REFRESH_TOKEN_COOKIE, null);
-        refreshCookie.setPath("/");
-        refreshCookie.setMaxAge(0);
-        response.addCookie(refreshCookie);
+        ResponseCookie refreshCookie = ResponseCookie.from(REFRESH_TOKEN_COOKIE, "")
+                .httpOnly(true)
+                .secure(secureCookie)
+                .path("/")
+                .maxAge(0)
+                .sameSite("Lax")
+                .build();
+        response.addHeader(HttpHeaders.SET_COOKIE, refreshCookie.toString());
     }
 }

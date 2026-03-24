@@ -1,5 +1,4 @@
 package kr.eolmago.dto.api.user.request;
-
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 

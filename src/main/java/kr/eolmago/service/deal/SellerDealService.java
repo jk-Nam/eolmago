@@ -1,5 +1,4 @@
 package kr.eolmago.service.deal;
-
 import kr.eolmago.domain.entity.auction.AuctionImage;
 import kr.eolmago.domain.entity.deal.Deal;
 import kr.eolmago.dto.api.deal.response.DealDetailDto;

@@ -1,5 +1,4 @@
 package kr.eolmago.repository.user.impl;
-
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import kr.eolmago.domain.entity.user.QSocialLogin;

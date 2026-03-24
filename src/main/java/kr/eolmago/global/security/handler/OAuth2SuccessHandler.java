@@ -1,5 +1,4 @@
 package kr.eolmago.global.security.handler;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;

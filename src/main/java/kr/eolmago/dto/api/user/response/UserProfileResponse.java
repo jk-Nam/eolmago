@@ -1,5 +1,4 @@
 package kr.eolmago.dto.api.user.response;
-
 import kr.eolmago.domain.entity.user.UserProfile;
 import kr.eolmago.domain.entity.user.enums.UserRole;
 

@@ -1,5 +1,4 @@
 package kr.eolmago.domain.entity.user;
-
 import kr.eolmago.domain.entity.common.AuditableEntity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;

@@ -1,5 +1,4 @@
 package kr.eolmago.controller.view.user;
-
 import kr.eolmago.dto.api.user.response.UserProfileResponse;
 import kr.eolmago.global.security.CustomUserDetails;
 import kr.eolmago.service.user.UserProfileService;

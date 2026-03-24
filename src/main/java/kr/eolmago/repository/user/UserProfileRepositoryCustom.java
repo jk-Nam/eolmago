@@ -1,5 +1,4 @@
 package kr.eolmago.repository.user;
-
 import kr.eolmago.domain.entity.user.UserProfile;
 
 import java.util.Optional;

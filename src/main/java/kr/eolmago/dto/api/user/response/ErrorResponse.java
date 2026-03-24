@@ -1,5 +1,4 @@
 package kr.eolmago.dto.api.user.response;
-
 import java.time.Instant;
 
 public record ErrorResponse(

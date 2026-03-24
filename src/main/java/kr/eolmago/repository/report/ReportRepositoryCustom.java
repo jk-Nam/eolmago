@@ -1,5 +1,4 @@
 package kr.eolmago.repository.report;
-
 import kr.eolmago.domain.entity.report.Report;
 import kr.eolmago.domain.entity.report.enums.ReportStatus;
 import kr.eolmago.domain.entity.user.User;

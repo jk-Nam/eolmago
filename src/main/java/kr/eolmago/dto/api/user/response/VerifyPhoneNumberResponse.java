@@ -1,5 +1,4 @@
 package kr.eolmago.dto.api.user.response;
-
 public record VerifyPhoneNumberResponse(
         boolean verified,
         String message,

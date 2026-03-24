@@ -1,5 +1,4 @@
 package kr.eolmago.dto.api.admin.response;
-
 import kr.eolmago.domain.entity.user.enums.PenaltyType;
 import lombok.Builder;
 

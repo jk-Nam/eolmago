@@ -1,5 +1,4 @@
 package kr.eolmago.scheduler;
-
 import jakarta.persistence.EntityManager;
 import kr.eolmago.domain.entity.auction.Auction;
 import kr.eolmago.domain.entity.auction.AuctionItem;

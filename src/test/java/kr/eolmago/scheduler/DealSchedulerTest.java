@@ -1,5 +1,4 @@
 package kr.eolmago.scheduler;
-
 import kr.eolmago.domain.entity.deal.Deal;
 import kr.eolmago.domain.entity.deal.enums.DealStatus;
 import kr.eolmago.repository.deal.DealRepository;

@@ -1,5 +1,4 @@
 package kr.eolmago.domain.entity.report.enums;
-
 // 경미한 신고 -> WARN
 // 1회: SUSPEND_1D
 // 2회: SUSPEND_7D

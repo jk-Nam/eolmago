@@ -1,5 +1,4 @@
 package kr.eolmago.dto.api.report.request;
-
 import kr.eolmago.domain.entity.report.enums.ReportReason;
 import kr.eolmago.domain.entity.report.enums.ReportStatus;
 import kr.eolmago.domain.entity.report.enums.ReportTargetType;

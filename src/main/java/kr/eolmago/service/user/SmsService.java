@@ -1,5 +1,4 @@
 package kr.eolmago.service.user;
-
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import net.nurigo.sdk.NurigoApp;
@@ -30,7 +29,8 @@ public class SmsService {
     }
 
     public void sendVerificationCode(String to, String verificationCode) {
-        log.info("SMS 발송: to={}, code={}", to, verificationCode);
+        // 보안: 인증코드를 로그에 기록하지 않음 (프로덕션 로그 노출 방지)
+        log.info("SMS 발송 시작: to={}", to);
 
         Message message = new Message();
         message.setFrom(fromNumber);

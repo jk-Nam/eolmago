@@ -1,5 +1,4 @@
 package kr.eolmago.controller.api.admin;
-
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kr.eolmago.domain.entity.report.enums.ReportAction;

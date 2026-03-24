@@ -1,5 +1,4 @@
 package kr.eolmago.service.user;
-
 import kr.eolmago.domain.entity.user.SocialLogin;
 import kr.eolmago.domain.entity.user.User;
 import kr.eolmago.domain.entity.user.enums.UserStatus;

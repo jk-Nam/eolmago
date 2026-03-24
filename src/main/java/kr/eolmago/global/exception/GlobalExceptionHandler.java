@@ -1,6 +1,5 @@
 package kr.eolmago.global.exception;
 
-
 import jakarta.servlet.http.HttpServletRequest;
 import kr.eolmago.service.notification.exception.NotificationErrorCode;
 import kr.eolmago.service.notification.exception.NotificationException;

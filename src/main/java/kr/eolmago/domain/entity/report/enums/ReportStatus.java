@@ -1,5 +1,4 @@
 package kr.eolmago.domain.entity.report.enums;
-
 public enum ReportStatus {
     PENDING, // 접수
     UNDER_REVIEW, // 검토 중

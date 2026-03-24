@@ -1,5 +1,4 @@
 package kr.eolmago.repository.user;
-
 import kr.eolmago.domain.entity.user.User;
 import kr.eolmago.domain.entity.user.UserPenalty;
 import kr.eolmago.domain.entity.user.enums.PenaltyType;
