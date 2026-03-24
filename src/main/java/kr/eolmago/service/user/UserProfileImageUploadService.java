@@ -80,6 +80,12 @@ public class UserProfileImageUploadService {
         // 이미지 크기(가로/세로) 제한
         try {
             BufferedImage bufferedImage = ImageIO.read(image.getInputStream());
+
+            // 보안: ImageIO.read()는 지원하지 않는 형식일 때 null 반환 (NPE 방지)
+            if (bufferedImage == null) {
+                throw new IllegalArgumentException("지원하지 않는 이미지 형식입니다.");
+            }
+
             int width = bufferedImage.getWidth();
             int height = bufferedImage.getHeight();
             if (width > 400 || height > 400) {
