@@ -100,21 +100,6 @@ public class UserProfileController {
         }
     }
 
-    private String extractAccessToken(HttpServletRequest request) {
-        String authHeader = request.getHeader("Authorization");
-        if (authHeader != null && authHeader.startsWith("Bearer ")) {
-            return authHeader.substring("Bearer ".length());
-        }
-        if (request.getCookies() != null) {
-            for (Cookie cookie : request.getCookies()) {
-                if ("accessToken".equals(cookie.getName())) {
-                    return cookie.getValue();
-                }
-            }
-        }
-        return null;
-    }
-
     @PostMapping("/checkNickname")
     public ResponseEntity<CheckNicknameResponse> checkNickname(
             @Valid @RequestBody CheckNicknameRequest request

@@ -266,9 +266,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     }
 
     private void clearAuthCookies(HttpServletResponse response,  HttpServletRequest request, String reason) {
-
-        String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS"));
-
         Cookie accessCookie = new Cookie(ACCESS_TOKEN_COOKIE, null);
         accessCookie.setPath("/");
         accessCookie.setMaxAge(0);
